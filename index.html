@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090b20">
+  <meta name="description" content="Our Constellation — every memory a star, joined up in the sky above us.">
+  <title>Our Constellation ✦ Love for Mena</title>
+  <link rel="canonical" href="https://menaammarpro.github.io/love-constellation/">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Our Constellation — for Mena">
+  <meta property="og:title" content="Our Constellation ✦ Love for Mena">
+  <meta property="og:description" content="Every memory a star, joined up in the sky above us.">
+  <meta property="og:url" content="https://menaammarpro.github.io/love-constellation/">
+  <meta property="og:image" content="https://menaammarpro.github.io/love-constellation/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Our Constellation — memories drawn as stars">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Our Constellation ✦ Love for Mena">
+  <meta name="twitter:description" content="Every memory a star, joined up in the sky above us.">
+  <meta name="twitter:image" content="https://menaammarpro.github.io/love-constellation/assets/og-image.png">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/app.css">
+  <script src="js/theme-main.js" defer></script>
+  <script src="js/effects.js" defer></script>
+  <script src="js/app.js" defer></script>
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Our Constellation">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/icon-192.png">
+</head>
+<body>
+  <canvas id="starfield" aria-hidden="true"></canvas>
+
+  <header class="site-header">
+    <a class="brand" href="index.html">✦ Our Constellation</a>
+    <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">Menu</button>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a class="active" href="index.html">Home</a>
+      <a href="#sky">The sky</a>
+      <a href="#list">All stars</a>
+      <a href="#details">Details</a>
+      <a href="https://menaammarpro.github.io/loveformymena/">Our little universe ↗</a>
+      <button class="theme-toggle" type="button" aria-label="Toggle color theme">Theme</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero constellation-hero">
+      <p class="eyebrow">MADE OF US</p>
+      <div class="moon" aria-hidden="true">✦</div>
+      <p class="small-caption">Every memory we keep becomes a star.</p>
+      <h1>Our <span>constellation.</span></h1>
+      <p class="hero-description">
+        Add a memory and it lights up as a star. They join up in the order they
+        happened, until the sky looks exactly like us. Tap a star to read it back.
+      </p>
+      <div class="hero-actions">
+        <a class="button button-primary" href="#sky">Add a star <span>♥</span></a>
+        <a class="button button-ghost" href="#list">See them all</a>
+      </div>
+      <p class="signature">Made with love, just for you <span>♥</span></p>
+    </section>
+
+    <section class="section" id="sky">
+      <p class="eyebrow">THE SKY ABOVE US</p>
+      <h2>Light a <span>star.</span></h2>
+
+      <div class="canvas-wrap">
+        <canvas id="sky-canvas" width="800" height="500" aria-label="Our constellation of memories"></canvas>
+        <p class="sky-hint" id="sky-hint">Add a memory below and it becomes a star ♥</p>
+      </div>
+
+      <div class="constellation-form">
+        <label class="field">
+          <span>What's the memory?</span>
+          <input type="text" id="star-title" maxlength="60" placeholder="The first time you said goodnight on Free Fire" aria-label="Memory title">
+        </label>
+        <label class="field">
+          <span>More about it (optional)</span>
+          <textarea id="star-note" maxlength="500" rows="3" placeholder="How it felt, what she said, anything at all…" aria-label="Memory note"></textarea>
+        </label>
+        <button class="button button-primary" id="add-star" type="button">Add it to the sky <span>♥</span></button>
+      </div>
+
+      <div class="selected-panel" id="selected-panel" hidden>
+        <p class="eyebrow">THIS STAR</p>
+        <h3 id="selected-title"></h3>
+        <p class="selected-date" id="selected-date"></p>
+        <p class="selected-note" id="selected-note"></p>
+        <button class="entry-remove" id="remove-star" type="button">Remove this star</button>
+      </div>
+
+      <p class="section-note" id="save-note" aria-live="polite"></p>
+    </section>
+
+    <section class="section" id="list">
+      <p class="eyebrow">EVERY STAR SO FAR</p>
+      <h2>All our <span>memories.</span></h2>
+      <div class="constellation-meta">
+        <span class="diary-chip"><strong id="star-count">0</strong> stars in the sky</span>
+      </div>
+      <div class="star-list" id="star-list"></div>
+    </section>
+
+    <section class="section" id="details">
+      <p class="eyebrow">JUST FOR US</p>
+      <h2>Details.</h2>
+      <div class="settings-actions">
+        <button class="button button-ghost" id="share-button" type="button">Share this page</button>
+        <button class="button button-ghost" id="reset-sky" type="button">Clear the sky</button>
+      </div>
+      <p class="settings-note" id="save-note2">Saved on this device only — no tracking, no network calls.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Made with care <span>♥</span> for Mena</p>
+    <p class="footer-small">A little universe of its own ✦</p>
+  </footer>
+</body>
+</html>
