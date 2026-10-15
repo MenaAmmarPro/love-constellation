@@ -1,0 +1,176 @@
+/* love-constellation — page styles (built on css/theme.css) */
+
+.constellation-hero {
+  padding-block: clamp(2.5rem, 7vw, 5rem) clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.small-caption {
+  max-width: 44ch;
+  margin: 0.35rem auto 0.5rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.canvas-wrap {
+  position: relative;
+  margin-top: 1.6rem;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  overflow: hidden;
+  background: radial-gradient(120% 130% at 50% 0%, rgba(255, 159, 207, 0.1), rgba(9, 11, 32, 0.95));
+  box-shadow: var(--shadow);
+}
+
+#sky-canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 8 / 5;
+  touch-action: manipulation;
+  cursor: pointer;
+}
+
+.sky-hint {
+  position: absolute;
+  inset: auto 0 0 0;
+  margin: 0;
+  padding: 0.7rem 1rem;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.82rem;
+  background: linear-gradient(0deg, rgba(9, 11, 32, 0.85), transparent);
+  pointer-events: none;
+}
+
+.constellation-form {
+  display: grid;
+  gap: 0.9rem;
+  max-width: 680px;
+  margin-top: 1.4rem;
+}
+
+.field {
+  display: block;
+}
+
+.field > span {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text);
+  font: inherit;
+  resize: vertical;
+}
+
+.field input:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: var(--pink);
+}
+
+.selected-panel {
+  max-width: 680px;
+  margin-top: 1.4rem;
+  padding: 1.1rem 1.2rem;
+  border: 1px solid var(--pink-strong);
+  border-radius: 16px;
+  background: linear-gradient(150deg, rgba(255, 182, 216, 0.12), rgba(255, 255, 255, 0.02));
+}
+
+.selected-panel h3 {
+  margin: 0.2rem 0 0;
+  font-size: 1.15rem;
+}
+
+.selected-date {
+  margin: 0.3rem 0 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.selected-note {
+  margin: 0.7rem 0 0;
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+.entry-remove {
+  margin-top: 0.9rem;
+  border: none;
+  background: none;
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.76rem;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.constellation-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.2rem;
+}
+
+.diary-chip {
+  padding: 0.35rem 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  font-size: 0.82rem;
+}
+
+.diary-chip strong {
+  color: var(--pink);
+}
+
+.star-list {
+  display: grid;
+  gap: 0.7rem;
+  margin-top: 1.6rem;
+}
+
+.star-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.6rem;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--panel);
+  cursor: pointer;
+}
+
+.star-item:hover {
+  border-color: var(--pink);
+}
+
+.star-dot {
+  color: var(--pink);
+}
+
+.star-item-title {
+  font-weight: 500;
+}
+
+.star-item-date {
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.star-empty {
+  padding: 2rem 1rem;
+  text-align: center;
+  color: var(--muted);
+}
